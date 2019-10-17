@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="shortcut icon" href="./../img/fav_belca.ico" type="image/x-icon">
+<title>{{*pagetitle}}</title>
+
+    <!--customize map-->
+    <style>
+        [class*="ymaps-2"][class*="-ground-pane"] {
+            filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");
+            -webkit-filter: grayscale(100%);
+        }
+    </style>
+<link href="assets/template/css/styles.css" rel="stylesheet"></head>
+
+<body>
+
+<!--preloader start-->
+<div class="belca_preloader">
+    <div class="preload_wrapper">
+        <svg class="logo_svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 74.2 106.9" style="enable-background:new 0 0 74.2 106.9;" xml:space="preserve">
+    <style type="text/css">
+        .st0 {
+            fill: #0D0D0D;
+        }
+
+        .st1 {
+            fill: #009DA9;
+        }
+    </style>
+    <g>
+        <g>
+            <path class="st0" d="M37.5,0c0,15.2,11.7,29.8,25.8,44.2c16.4,19.6,13,37.3-1.5,53.8C47.3,111.3,20.9,110.1,7,91.9
+                C-3.7,76-2.3,59.5,12.6,42.2C23.2,31.3,32.4,19.6,36.4,5.5c-2.4,9.2-2.6,17.1-14,30.5C13.6,45.9,5.1,56.3,4.1,67.8
+                C4,86.3,13,96.3,26.6,102c16.2,4,29.8,0,39.8-14.6c7.4-13.3,6.3-25.7-1.7-37.3c-4-5.6-8.6-11.1-13.5-16.7
+                C41.2,21.8,37.1,10.7,37.5,0z"></path>
+            <g>
+                <path class="st1" d="M64.3,62.9c-0.6-8-3.4-14.9-11.1-19.3c-8.9-3.4-15.9-3.2-20,2.3c-4.8,9.7,0.8,16.3,7.2,22.8
+                    c0.5,0.2,1,0.4,1.5,0.6c-4.6-7.3-9-14.7-5.7-21.3c3.1-5,9.4-4,16.4-1.9C59.2,49.2,62.2,55.7,64.3,62.9z"></path>
+                <path class="st1" d="M26.3,55.4c-0.5,0.5-0.9,0.9-1.4,1.4c-0.3,0.1-0.7,0.2-1,0.3c0-1.5,0.5-2.9,1.5-4.3c1.7-1.7,4.1-2.1,4.3,1.5
+                    c-0.9,8.2,0.5,12,3.3,12.8c4.6,1.6,9.1,3,11.3,4.9c3.5,2.9,4.3,6.5,4.1,10.2c-1.2-4.8-3.7-8.4-8.3-10c-2.8-0.9-5.6-1.7-8.4-2.6
+                    c-3.2-1.4-5.4-3.7-5.7-7.9C25.8,59.7,25.9,57.5,26.3,55.4z"></path>
+                <path class="st1" d="M22.6,57.7c-2.7-1.6-5.6-1.3-8.7-0.3c-2.9,1.2-5.4,2.9-6,6.3c-0.1,2.3,0.7,3.8,2.2,4.5
+                    c1.6,0.4,3.1,0.5,4.7,0.5c0.2-0.2,0.4-0.4,0.6-0.6c-0.5-0.8-1-1.4-1.7-1.9c-0.7-0.1-1.4-0.5-2-0.9C10.8,61.1,15.3,58.9,22.6,57.7
+                    z"></path>
+                <path class="st1" d="M23.7,74.8c-3.3-0.4-5.7-1.1-7-2.1c-2.3-2.1-4.5-3.3-6.6-2.5c-1.4,0.6-2.3,1.7-1.7,4.4
+                    c0.9,1.4,1.8,1.7,2.6,1c0.1-0.7,0.1-1.3,0.2-2c1.2,0.3,2.5,0.9,3.7,1.6C17.1,76.7,20,76.8,23.7,74.8z"></path>
+                <path class="st1" d="M53.2,64.6c-1.9,1.8-2.2,4.8-1.1,9c2.5,5.5,3.7,10.2,2.3,13.3c-1.7,4.2-5.4,7-10,9.1
+                    c1.6,0.1,3.2,0.2,4.8,0.3c4.6-1.4,7.4-4.4,8.6-8.7c1.1-3.4,0.2-7.4-2.1-11.8C53.4,71.9,52.2,68,53.2,64.6z"></path>
+                <path class="st1" d="M39.4,80.1c-1.9-2.3-5-3.2-9-3c-2.7,0.3-4.3,2.2-4.4,6.5c0.3,4.1,2.5,7,6,9.1c0.3,0,0.5,0,0.8,0
+                    c-0.3-1.1-0.5-2.3-0.8-3.4c-2.3-4.2-3.9-8.1-1.4-9.5C34.2,79.2,37,79.4,39.4,80.1z"></path>
+                <path class="st1" d="M31.6,94.3c-2.5-2.4-5.4-3.8-8.8-4c-3.5,0.3-5.4,1.5-3.9,5c1.3,1.4,2.6,1.9,3.8,0.3c-0.3-0.5-0.7-0.9-1-1.4
+                    c1.4-0.9,2.9-0.8,4.5-0.4C28.2,94.3,30.1,94.6,31.6,94.3z"></path>
+            </g>
+        </g>
+    </g>
+    </svg>
+    </div>
+</div>
+<!--preloader end-->
+
+
+<div class="contacts_page preloaded_content">
+    <header class="hdr_v7">
+    <div class="container">
+        <div class="top_hdr_wrap">
+
+            <div class="mob_hdr_switch">
+                <div class="mob_nav_btn">
+                    <div class="nav_btn_line"></div>
+                    <div class="nav_btn_line"></div>
+                    <div class="nav_btn_line"></div>
+                </div>
+            </div>
+
+            <a href="index.html" class="hdr_logo">
+                <svg class="logo_svg" width="58px" height="80px" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 74.2 106.9" style="enable-background:new 0 0 74.2 106.9;" xml:space="preserve">
+    <style type="text/css">
+        .st0{fill:#0D0D0D;}
+        .st1{fill:#009DA9;}
+    </style>
+    <g>
+        <g>
+            <path class="st0" d="M37.5,0c0,15.2,11.7,29.8,25.8,44.2c16.4,19.6,13,37.3-1.5,53.8C47.3,111.3,20.9,110.1,7,91.9
+                C-3.7,76-2.3,59.5,12.6,42.2C23.2,31.3,32.4,19.6,36.4,5.5c-2.4,9.2-2.6,17.1-14,30.5C13.6,45.9,5.1,56.3,4.1,67.8
+                C4,86.3,13,96.3,26.6,102c16.2,4,29.8,0,39.8-14.6c7.4-13.3,6.3-25.7-1.7-37.3c-4-5.6-8.6-11.1-13.5-16.7
+                C41.2,21.8,37.1,10.7,37.5,0z"></path>
+            <g>
+                <path class="st1" d="M64.3,62.9c-0.6-8-3.4-14.9-11.1-19.3c-8.9-3.4-15.9-3.2-20,2.3c-4.8,9.7,0.8,16.3,7.2,22.8
+                    c0.5,0.2,1,0.4,1.5,0.6c-4.6-7.3-9-14.7-5.7-21.3c3.1-5,9.4-4,16.4-1.9C59.2,49.2,62.2,55.7,64.3,62.9z"></path>
+                <path class="st1" d="M26.3,55.4c-0.5,0.5-0.9,0.9-1.4,1.4c-0.3,0.1-0.7,0.2-1,0.3c0-1.5,0.5-2.9,1.5-4.3c1.7-1.7,4.1-2.1,4.3,1.5
+                    c-0.9,8.2,0.5,12,3.3,12.8c4.6,1.6,9.1,3,11.3,4.9c3.5,2.9,4.3,6.5,4.1,10.2c-1.2-4.8-3.7-8.4-8.3-10c-2.8-0.9-5.6-1.7-8.4-2.6
+                    c-3.2-1.4-5.4-3.7-5.7-7.9C25.8,59.7,25.9,57.5,26.3,55.4z"></path>
+                <path class="st1" d="M22.6,57.7c-2.7-1.6-5.6-1.3-8.7-0.3c-2.9,1.2-5.4,2.9-6,6.3c-0.1,2.3,0.7,3.8,2.2,4.5
+                    c1.6,0.4,3.1,0.5,4.7,0.5c0.2-0.2,0.4-0.4,0.6-0.6c-0.5-0.8-1-1.4-1.7-1.9c-0.7-0.1-1.4-0.5-2-0.9C10.8,61.1,15.3,58.9,22.6,57.7
+                    z"></path>
+                <path class="st1" d="M23.7,74.8c-3.3-0.4-5.7-1.1-7-2.1c-2.3-2.1-4.5-3.3-6.6-2.5c-1.4,0.6-2.3,1.7-1.7,4.4
+                    c0.9,1.4,1.8,1.7,2.6,1c0.1-0.7,0.1-1.3,0.2-2c1.2,0.3,2.5,0.9,3.7,1.6C17.1,76.7,20,76.8,23.7,74.8z"></path>
+                <path class="st1" d="M53.2,64.6c-1.9,1.8-2.2,4.8-1.1,9c2.5,5.5,3.7,10.2,2.3,13.3c-1.7,4.2-5.4,7-10,9.1
+                    c1.6,0.1,3.2,0.2,4.8,0.3c4.6-1.4,7.4-4.4,8.6-8.7c1.1-3.4,0.2-7.4-2.1-11.8C53.4,71.9,52.2,68,53.2,64.6z"></path>
+                <path class="st1" d="M39.4,80.1c-1.9-2.3-5-3.2-9-3c-2.7,0.3-4.3,2.2-4.4,6.5c0.3,4.1,2.5,7,6,9.1c0.3,0,0.5,0,0.8,0
+                    c-0.3-1.1-0.5-2.3-0.8-3.4c-2.3-4.2-3.9-8.1-1.4-9.5C34.2,79.2,37,79.4,39.4,80.1z"></path>
+                <path class="st1" d="M31.6,94.3c-2.5-2.4-5.4-3.8-8.8-4c-3.5,0.3-5.4,1.5-3.9,5c1.3,1.4,2.6,1.9,3.8,0.3c-0.3-0.5-0.7-0.9-1-1.4
+                    c1.4-0.9,2.9-0.8,4.5-0.4C28.2,94.3,30.1,94.6,31.6,94.3z"></path>
+            </g>
+        </g>
+    </g>
+    </svg>
+                <span class="logo_txt">
+                    <span class="txt_line">Группа компаний</span>
+                    <span class="txt_line"><b>БЕЛЫЙ КАРТРИДЖ</b></span>
+                    <span class="txt_line">Типография полного цикла</span>
+                </span>
+            </a>
+
+            <div class="hdr_info_switch">
+                <svg class="d-none" width="26px" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 612 612" style="enable-background:new 0 0 612 612;" xml:space="preserve">
+<g>
+	<g>
+		<g>
+			<polygon points="612,36.004 576.521,0.603 306,270.608 35.478,0.603 0,36.004 270.522,306.011 0,575.997 35.478,611.397
+				306,341.411 576.521,611.397 612,575.997 341.459,306.011 			"/>
+		</g>
+	</g>
+</g>
+</svg>
+                <svg width="26px" aria-hidden="true" focusable="false" data-icon="phone" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M493.4 24.6l-104-24c-11.3-2.6-22.9 3.3-27.5 13.9l-48 112c-4.2 9.8-1.4 21.3 6.9 28l60.6 49.6c-36 76.7-98.9 140.5-177.2 177.2l-49.6-60.6c-6.8-8.3-18.2-11.1-28-6.9l-112 48C3.9 366.5-2 378.1.6 389.4l24 104C27.1 504.2 36.7 512 48 512c256.1 0 464-207.5 464-464 0-11.2-7.7-20.9-18.6-23.4z"></path></svg>
+            </div>
+
+            <div class="hdr_info_wrapper">
+                <div class="hdr_info_inner">
+
+                    <div class="hdr_info_col">
+                        <div class="hdr_info_item">
+                            <svg width="13.5px" aria-hidden="true" focusable="false" data-icon="map-marker-alt" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path fill="currentColor" d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"></path></svg>
+                            <span class="hdr_info_addr_line">Минск, ул. Мележа, д. 5, корп. 1, оф. 215</span>
+                        </div>
+                        <div class="hdr_info_item">
+                            <svg width="15px" aria-hidden="true" focusable="false" data-icon="clock" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm57.1 350.1L224.9 294c-3.1-2.3-4.9-5.9-4.9-9.7V116c0-6.6 5.4-12 12-12h48c6.6 0 12 5.4 12 12v137.7l63.5 46.2c5.4 3.9 6.5 11.4 2.6 16.8l-28.2 38.8c-3.9 5.3-11.4 6.5-16.8 2.6z"></path></svg>
+                            <span>пн–пт с 9:00–18:00</span>
+                        </div>
+                    </div>
+
+                    <div class="hdr_info_col">
+                        <div class="hdr_info_item">
+                            <svg width="15.5px" aria-hidden="true" focusable="false" data-icon="phone" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M493.4 24.6l-104-24c-11.3-2.6-22.9 3.3-27.5 13.9l-48 112c-4.2 9.8-1.4 21.3 6.9 28l60.6 49.6c-36 76.7-98.9 140.5-177.2 177.2l-49.6-60.6c-6.8-8.3-18.2-11.1-28-6.9l-112 48C3.9 366.5-2 378.1.6 389.4l24 104C27.1 504.2 36.7 512 48 512c256.1 0 464-207.5 464-464 0-11.2-7.7-20.9-18.6-23.4z"></path></svg>
+                            <a href="tel:+375291274178">+375 29 127-41-78</a>
+                        </div>
+                        <div class="hdr_info_item">
+                            <svg width="15.5px" aria-hidden="true" focusable="false" data-icon="phone" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M493.4 24.6l-104-24c-11.3-2.6-22.9 3.3-27.5 13.9l-48 112c-4.2 9.8-1.4 21.3 6.9 28l60.6 49.6c-36 76.7-98.9 140.5-177.2 177.2l-49.6-60.6c-6.8-8.3-18.2-11.1-28-6.9l-112 48C3.9 366.5-2 378.1.6 389.4l24 104C27.1 504.2 36.7 512 48 512c256.1 0 464-207.5 464-464 0-11.2-7.7-20.9-18.6-23.4z"></path></svg>
+                            <a href="tel:+375291274178">+375 29 127-41-78</a>
+                        </div>
+                        <div class="hdr_info_item">
+                            <svg width="15.5px" aria-hidden="true" focusable="false" data-icon="envelope" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"></path></svg>
+                            <a href="mailto:email@info.by">email@info.by</a>
+                        </div>
+                    </div>
+
+
+                    <!-- Button trigger modal -->
+                    <button type="button" class="main_btn btn_sm" data-toggle="modal" data-target="#callbackModal">
+                        Заказать звонок
+                    </button>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="hdr_nav_row">
+        <div class="container position-relative">
+            <nav class="hdr_main_nav">
+                <ul class="nav">
+                    <li class="nav-item dropdown dropdown-toggle">
+                        <a class="nav-link" data-toggle="dropdown" href="category.html" role="button" aria-haspopup="true" aria-expanded="false">Продукция</a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a class="dropdown-item" href="subcategory.html">Журналы и книги</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="subcategory.html">Буклеты</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="subcategory.html">Листовки и флаеры</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="subcategory.html">Каленадри</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="subcategory.html">Визитки</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="subcategory.html">Конверты</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="subcategory.html">Папки</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="subcategory.html">Блокноты</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" data-toggle="dropdown" href="services.html" role="button" aria-haspopup="true" aria-expanded="false">Услуги</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="service_page.html">Журналы и книги</a>
+                            <a class="dropdown-item" href="service_page.html">Буклеты</a>
+                            <a class="dropdown-item" href="service_page.html">Листовки и флаеры</a>
+                            <a class="dropdown-item" href="service_page.html">Каленадри</a>
+                            <a class="dropdown-item" href="service_page.html">Визитки</a>
+                            <a class="dropdown-item" href="service_page.html">Конверты</a>
+                            <a class="dropdown-item" href="service_page.html">Папки</a>
+                            <a class="dropdown-item" href="service_page.html">Блокноты</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="uniq_prod.html">Уникальный продукт</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="sales_and_news.html">Акции и новости</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="design.html">Дизайн</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="teh.html">Требования к макетам</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacts.html">Контакты</a>
+                    </li>
+                </ul>
+
+                <form action="#" method="post" class="hdr_mob_search">
+                    <input type="submit" value="">
+                    <input type="text" name="search_request" data-request="[0]" placeholder="Что вы ищете?">
+                </form>
+
+                <svg class="searchTrigger mr-2" width="1.15em" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 250.313 250.313" style="enable-background:new 0 0 250.313 250.313;" xml:space="preserve">
+<g>
+	<path style="fill:currentColor;fill-rule:evenodd;clip-rule:evenodd;" d="M244.186,214.604l-54.379-54.378c-0.289-0.289-0.628-0.491-0.93-0.76
+		c10.7-16.231,16.945-35.66,16.945-56.554C205.822,46.075,159.747,0,102.911,0S0,46.075,0,102.911
+		c0,56.835,46.074,102.911,102.91,102.911c20.895,0,40.323-6.245,56.554-16.945c0.269,0.301,0.47,0.64,0.759,0.929l54.38,54.38
+		c8.169,8.168,21.413,8.168,29.583,0C252.354,236.017,252.354,222.773,244.186,214.604z M102.911,170.146
+		c-37.134,0-67.236-30.102-67.236-67.235c0-37.134,30.103-67.236,67.236-67.236c37.132,0,67.235,30.103,67.235,67.236
+		C170.146,140.044,140.043,170.146,102.911,170.146z"/>
+</g>
+</svg>
+            </nav>
+            <form action="#" method="post" class="hdr_search">
+                <input class="search_request" type="text" name="searchRequest" placeholder="Что вы хотите найти?">
+                <div class="search_suggest_list hideOnClickOutside">
+                    <a href="product.html" class="search_suggest_item">SP 325SNw / SP 325SFNw / SP 377SFNwX </a>
+                    <a href="product.html" class="search_suggest_item">SP 220SNw / SP 277SNwX / SP 220SFNw / SP 277SFNwX </a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</header>
+
+
+<!-- Modal -->
+<div class="modal fade " id="callbackModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="callback_title">Заявка на консультацию</div>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="callback_txt">
+                    Оставьте свои данные и наш менеджер свяжется с вами в течение 20 минут
+                </div>
+                <form action="#" method="post">
+                    <div class="row">
+                        <div class="col-lg-12 material">
+                            <div class="group">
+                                <input type="text" name="name" minlength="3" required>
+                                <span class="highlight"></span>
+                                <span class="bar"></span>
+                                <label>Ваше имя</label>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 material">
+                            <div class="group">
+                                <input type="tel" name="phone" title="+375 (17|29|33|44|25) XXX-XX-XX" placeholder="+375 XX XXX-XX-XX" pattern="^\+375 (17|29|33|44|25) [0-9]{3}-[0-9]{2}-[0-9]{2}$" required>
+                                <span class="highlight"></span>
+                                <span class="bar"></span>
+                                <label>Номер телефона</label>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 pt-3 btn_wrap">
+                            <input type="submit" class="main_btn" value="Отправить">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <main>
+
+        <div class="container notfound_wrap"> <div class="page_block text-center py-5"> <img src=assets/template/img/404.png alt=ald class=mb-3> <p class=h3>К сожалению, страница не найдена</p> <div class="block_btn_wrap mt-5"> <a href=index.html class="main_btn reversed px-md-5"> на главную </a> </div> </div> </div>
+
+    </main>
+    <!--<footer>-->
+    <footer class="ftr_v4">
+    <div class="container">
+        <div class="ftr_grid">
+
+            <div class="ftr_item col_3">
+                <div class="ftr_logo">
+                    <svg class="logo_svg" width="58px" height="80px" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 74.2 106.9" style="enable-background:new 0 0 74.2 106.9;" xml:space="preserve">
+    <style type="text/css">
+        .st0{fill:#0D0D0D;}
+        .st1{fill:#009DA9;}
+    </style>
+    <g>
+        <g>
+            <path class="st0" d="M37.5,0c0,15.2,11.7,29.8,25.8,44.2c16.4,19.6,13,37.3-1.5,53.8C47.3,111.3,20.9,110.1,7,91.9
+                C-3.7,76-2.3,59.5,12.6,42.2C23.2,31.3,32.4,19.6,36.4,5.5c-2.4,9.2-2.6,17.1-14,30.5C13.6,45.9,5.1,56.3,4.1,67.8
+                C4,86.3,13,96.3,26.6,102c16.2,4,29.8,0,39.8-14.6c7.4-13.3,6.3-25.7-1.7-37.3c-4-5.6-8.6-11.1-13.5-16.7
+                C41.2,21.8,37.1,10.7,37.5,0z"></path>
+            <g>
+                <path class="st1" d="M64.3,62.9c-0.6-8-3.4-14.9-11.1-19.3c-8.9-3.4-15.9-3.2-20,2.3c-4.8,9.7,0.8,16.3,7.2,22.8
+                    c0.5,0.2,1,0.4,1.5,0.6c-4.6-7.3-9-14.7-5.7-21.3c3.1-5,9.4-4,16.4-1.9C59.2,49.2,62.2,55.7,64.3,62.9z"></path>
+                <path class="st1" d="M26.3,55.4c-0.5,0.5-0.9,0.9-1.4,1.4c-0.3,0.1-0.7,0.2-1,0.3c0-1.5,0.5-2.9,1.5-4.3c1.7-1.7,4.1-2.1,4.3,1.5
+                    c-0.9,8.2,0.5,12,3.3,12.8c4.6,1.6,9.1,3,11.3,4.9c3.5,2.9,4.3,6.5,4.1,10.2c-1.2-4.8-3.7-8.4-8.3-10c-2.8-0.9-5.6-1.7-8.4-2.6
+                    c-3.2-1.4-5.4-3.7-5.7-7.9C25.8,59.7,25.9,57.5,26.3,55.4z"></path>
+                <path class="st1" d="M22.6,57.7c-2.7-1.6-5.6-1.3-8.7-0.3c-2.9,1.2-5.4,2.9-6,6.3c-0.1,2.3,0.7,3.8,2.2,4.5
+                    c1.6,0.4,3.1,0.5,4.7,0.5c0.2-0.2,0.4-0.4,0.6-0.6c-0.5-0.8-1-1.4-1.7-1.9c-0.7-0.1-1.4-0.5-2-0.9C10.8,61.1,15.3,58.9,22.6,57.7
+                    z"></path>
+                <path class="st1" d="M23.7,74.8c-3.3-0.4-5.7-1.1-7-2.1c-2.3-2.1-4.5-3.3-6.6-2.5c-1.4,0.6-2.3,1.7-1.7,4.4
+                    c0.9,1.4,1.8,1.7,2.6,1c0.1-0.7,0.1-1.3,0.2-2c1.2,0.3,2.5,0.9,3.7,1.6C17.1,76.7,20,76.8,23.7,74.8z"></path>
+                <path class="st1" d="M53.2,64.6c-1.9,1.8-2.2,4.8-1.1,9c2.5,5.5,3.7,10.2,2.3,13.3c-1.7,4.2-5.4,7-10,9.1
+                    c1.6,0.1,3.2,0.2,4.8,0.3c4.6-1.4,7.4-4.4,8.6-8.7c1.1-3.4,0.2-7.4-2.1-11.8C53.4,71.9,52.2,68,53.2,64.6z"></path>
+                <path class="st1" d="M39.4,80.1c-1.9-2.3-5-3.2-9-3c-2.7,0.3-4.3,2.2-4.4,6.5c0.3,4.1,2.5,7,6,9.1c0.3,0,0.5,0,0.8,0
+                    c-0.3-1.1-0.5-2.3-0.8-3.4c-2.3-4.2-3.9-8.1-1.4-9.5C34.2,79.2,37,79.4,39.4,80.1z"></path>
+                <path class="st1" d="M31.6,94.3c-2.5-2.4-5.4-3.8-8.8-4c-3.5,0.3-5.4,1.5-3.9,5c1.3,1.4,2.6,1.9,3.8,0.3c-0.3-0.5-0.7-0.9-1-1.4
+                    c1.4-0.9,2.9-0.8,4.5-0.4C28.2,94.3,30.1,94.6,31.6,94.3z"></path>
+            </g>
+        </g>
+    </g>
+    </svg>
+
+                    <div class="ftr_logo_txt">
+                        <div class="subtitle">Группа компаний</div>
+                        <div class="title">БЕЛЫЙ КАРТРИДЖ</div>
+                        <div class="cprght">© CopyxPrint 2014–2019</div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="ftr_item col_6">
+                <form action="#" method="post" class="ftr_form">
+                    <div class="ftr_title">Если у вас есть вопросы, напишите нам</div>
+                    <div class="row">
+                        <div class="col-lg-6 material">
+                            <div class="group">
+                                <input type="text" name="name" minlength="3" required>
+                                <span class="highlight"></span>
+                                <span class="bar"></span>
+                                <label>Ваше имя</label>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 material">
+                            <div class="group">
+                                <input type="email" name="mail" required>
+                                <span class="highlight"></span>
+                                <span class="bar"></span>
+                                <label>Ваш email</label>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 material">
+                            <div class="group">
+                                <input type="text" name="message" required>
+                                <span class="highlight"></span>
+                                <span class="bar"></span>
+                                <label>Ваше сообщение</label>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 pt-3 btn_wrap">
+                            <input type="submit" class="main_btn" value="Отправить">
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="ftr_item col_3">
+                <div class="ftr_contact_col">
+
+                    <div class="soc_row mb-2">
+                        <a href="#" target="_blank" class="ftr_soc_link">
+                            <svg width="18px" aria-hidden="true" focusable="false" data-icon="instagram" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path></svg>
+                        </a>
+                        <a href="#" target="_blank" class="ftr_soc_link">
+                            <svg width="10px" aria-hidden="true" focusable="false" data-icon="facebook-f" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"></path></svg>
+                        </a>
+                    </div>
+
+                    <a href="#" class="ftr_link">ricoh@belca.by</a>
+                    <a href="#" class="ftr_link">info@belca.by</a>
+                    <a href="#" class="ftr_link">print@cprint.by</a>
+
+                    <div class="mt-2">
+                        <div class="ftr_txt_title">Реквизиты</div>
+                        <div class="ftr_txt">
+                            Р/С IBAN BY53P2450120065641245000933
+                            «Приорбанк» ОАО, ЦБУ 113, код PJCBBY2X,
+                            г. Минск, ул. Комсомольская, 13.
+                            <br>
+                            УНН 190276474, ОКПО 37561650
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</footer>
+    <!--</footer>-->
+</div>
+<script type="text/javascript" src="assets/template/js/bundle.js"></script></body>
+</html>
